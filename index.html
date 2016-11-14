@@ -1618,12 +1618,6 @@ password | String -->
 </tr>
 </thead><tbody>
 <tr>
-<td>accountId</td>
-<td>&mdash;</td>
-<td><strong>Optional</strong> with admin token, <strong>Unavailable</strong> with user token.</td>
-<td><code class="prettyprint">531968414930a7f09b075800</code></td>
-</tr>
-<tr>
 <td>fields</td>
 <td><code class="prettyprint">null</code></td>
 <td>Selection of fields, separated by space</td>
@@ -3117,12 +3111,6 @@ password | String -->
 </tr>
 </thead><tbody>
 <tr>
-<td>accountId</td>
-<td><code class="prettyprint">null</code> for <strong>admin</strong> token, connected account for <strong>user</strong> token</td>
-<td>with admin token, <strong>Unavailable</strong> with user token.</td>
-<td><code class="prettyprint">&quot;531968414930a7f09b075800&quot;</code></td>
-</tr>
-<tr>
 <td>ids</td>
 <td><code class="prettyprint">null</code></td>
 <td>Limit results to these ids</td>
@@ -3580,7 +3568,7 @@ password | String -->
 <tr>
 <td>accountId</td>
 <td>ObjectId</td>
-<td>Owner user</td>
+<td>Owner account</td>
 </tr>
 <tr>
 <td>listinsIds</td>
@@ -3656,12 +3644,6 @@ password | String -->
 <th>Example</th>
 </tr>
 </thead><tbody>
-<tr>
-<td>accountId</td>
-<td><code class="prettyprint">null</code></td>
-<td>Limit to a specific account</td>
-<td><code class="prettyprint">531968414930a7f09b075800</code></td>
-</tr>
 <tr>
 <td>listingId</td>
 <td><code class="prettyprint">null</code></td>
@@ -3989,12 +3971,6 @@ contactId | String (ObjectId) | Contact when <code class="prettyprint">target</c
 </tr>
 </thead><tbody>
 <tr>
-<td>accountId</td>
-<td><code class="prettyprint">null</code></td>
-<td>Limit to a specific account</td>
-<td><code class="prettyprint">531968414930a7f09b075800</code></td>
-</tr>
-<tr>
 <td>listingId</td>
 <td><code class="prettyprint">null</code></td>
 <td>Limit to a specific listing</td>
@@ -4170,16 +4146,9 @@ _id | String | Unique id
 ### HTTP Request
 `GET /calendar-rules`
 
-### Authorization
-Only accessible to *Admin* or *User* tokens.
-
-#### *User* tokens
-`accountId` is taken from token and not from request.
-
 ### Query Parameters
 Parameter | Default | Description | Example
 --------- | ------- | ----------- | -------
-accountId | `null` | Limit to a specific account | `531968414930a7f09b075800`
 listingId | `null` | Limit to a specific listing | `531968414930a7f09b075800`
 fields | `null` | Selection of fields, separated by space | `amount createdAt`
 sort | `-createdAt` | Field to sort by. Prepend `-` for DESC. | `createdAt`
@@ -5241,15 +5210,9 @@ System will make sure calendar is available, and decline otherwise (401), unless
 </tr>
 </thead><tbody>
 <tr>
-<td>accountId</td>
-<td><code class="prettyprint">null</code></td>
-<td>Limit to specific account.</td>
-<td><code class="prettyprint">5319686d4930a7f09b07589d</code></td>
-</tr>
-<tr>
 <td>reportId</td>
 <td><code class="prettyprint">null</code></td>
-<td>Pull a specific view (view is a saved settings of accountId, filters, fields, sort)</td>
+<td>Pull a specific view (view is a saved settings of filters, fields, sort)</td>
 <td><code class="prettyprint">556d95083c59ae58e3fdd8f4</code></td>
 </tr>
 <tr>
@@ -5572,12 +5535,6 @@ System will make sure calendar is available, and decline otherwise (401), unless
 </tr>
 </thead><tbody>
 <tr>
-<td>accountId</td>
-<td>connected user for <strong>user</strong> token</td>
-<td>The owning user</td>
-<td><code class="prettyprint">&quot;531968414930a7f09b075800&quot;</code></td>
-</tr>
-<tr>
 <td>q</td>
 <td><code class="prettyprint">null</code></td>
 <td>Search query string. Searches in <code class="prettyprint">title</code></td>
@@ -5757,7 +5714,7 @@ System will make sure calendar is available, and decline otherwise (401), unless
 <tr>
 <td>accountId</td>
 <td>String</td>
-<td>Id of owning user</td>
+<td>Id of owning account</td>
 </tr>
 <tr>
 <td>firstName</td>
@@ -5940,12 +5897,6 @@ System will make sure calendar is available, and decline otherwise (401), unless
 <th>Example</th>
 </tr>
 </thead><tbody>
-<tr>
-<td>accountId</td>
-<td><code class="prettyprint">null</code> for <strong>admin</strong> token, connected user for <strong>user</strong> token</td>
-<td>with admin token, <strong>Unavailable</strong> with user token.</td>
-<td><code class="prettyprint">&quot;531968414930a7f09b075800&quot;</code></td>
-</tr>
 <tr>
 <td>q</td>
 <td><code class="prettyprint">null</code></td>
@@ -6182,12 +6133,6 @@ System will make sure calendar is available, and decline otherwise (401), unless
 <th>Example</th>
 </tr>
 </thead><tbody>
-<tr>
-<td>accountId</td>
-<td>&mdash;</td>
-<td><strong>Optional</strong> with admin token, <strong>Unavailable</strong> with user token.</td>
-<td><code class="prettyprint">531968414930a7f09b075800</code></td>
-</tr>
 <tr>
 <td>fields</td>
 <td><code class="prettyprint">null</code></td>
@@ -6514,12 +6459,6 @@ System will make sure calendar is available, and decline otherwise (401), unless
 <th>Example</th>
 </tr>
 </thead><tbody>
-<tr>
-<td>accountId</td>
-<td>&mdash;</td>
-<td><strong>Optional</strong> with admin token, <strong>Unavailable</strong> with user token.</td>
-<td><code class="prettyprint">&quot;531968414930a7f09b075800&quot;</code></td>
-</tr>
 <tr>
 <td>fields</td>
 <td><code class="prettyprint">null</code></td>
@@ -7064,12 +7003,6 @@ assignee is a populated version of assigneeId as a user object with the fields: 
 </tr>
 </thead><tbody>
 <tr>
-<td>accountId</td>
-<td>&mdash;</td>
-<td><strong>Optional</strong> with admin token, <strong>Unavailable</strong> with user token.</td>
-<td><code class="prettyprint">&quot;531968414930a7f09b075800&quot;</code></td>
-</tr>
-<tr>
 <td>listingId</td>
 <td><code class="prettyprint">null</code></td>
 <td>Filter by specific listing</td>
@@ -7136,11 +7069,6 @@ assignee is a populated version of assigneeId as a user object with the fields: 
 <h3 id="http-request">HTTP Request</h3>
 
 <p><code class="prettyprint">POST /tasks</code></p>
-
-<h4 id="user-tokens"><em>User</em> tokens</h4>
-
-<p><code class="prettyprint">accountId</code> is taken from token and not from request.
-Available fields: All the object.</p>
 
 <p>Connected user can always create tasks for himself.</p>
 
@@ -7456,12 +7384,6 @@ Available fields: All the object.</p>
 </tr>
 </thead><tbody>
 <tr>
-<td>accountId</td>
-<td>&mdash;</td>
-<td><strong>Optional</strong> with admin token, <strong>Unavailable</strong> with user token.</td>
-<td><code class="prettyprint">&quot;531968414930a7f09b075800&quot;</code></td>
-</tr>
-<tr>
 <td>guestId</td>
 <td><code class="prettyprint">null</code></td>
 <td>Filter by specific guest</td>
@@ -7560,7 +7482,7 @@ Available fields: All the object.</p>
 <tr>
 <td>accountId</td>
 <td>String</td>
-<td>Id of the user owning this invoice</td>
+<td>Id of the account owning this invoice</td>
 </tr>
 <tr>
 <td>methodId</td>
@@ -7661,12 +7583,6 @@ Available fields: All the object.</p>
 <th>Example</th>
 </tr>
 </thead><tbody>
-<tr>
-<td>accountId</td>
-<td><code class="prettyprint">null</code> for <strong>admin</strong> token, connected account for <strong>user</strong> token</td>
-<td>with admin token, <strong>Unavailable</strong> with user token.</td>
-<td><code class="prettyprint">531968414930a7f09b075800</code></td>
-</tr>
 <tr>
 <td>methodId</td>
 <td><code class="prettyprint">null</code></td>
@@ -8039,12 +7955,6 @@ Not included fields are <code class="prettyprint">creditApplied</code>, <code cl
 </tr>
 </thead><tbody>
 <tr>
-<td>accountId</td>
-<td>&mdash;</td>
-<td>Limit results to user</td>
-<td><code class="prettyprint">531968414930a7f09b075800</code></td>
-</tr>
-<tr>
 <td>methodId</td>
 <td>&mdash;</td>
 <td>Limit results to a specific payment method</td>
@@ -8087,8 +7997,6 @@ Not included fields are <code class="prettyprint">creditApplied</code>, <code cl
 <td><code class="prettyprint">0</code></td>
 </tr>
 </tbody></table>
-
-<p><strong>At least one of <code class="prettyprint">accountId</code>, <code class="prettyprint">methodId</code> or <code class="prettyprint">invoiceId</code> is required.</strong></p>
 
 <h3 id="response">Response</h3>
 
@@ -8137,12 +8045,6 @@ Not included fields are <code class="prettyprint">creditApplied</code>, <code cl
 </tr>
 </thead><tbody>
 <tr>
-<td>accountId</td>
-<td>&mdash;</td>
-<td>Limit to user.</td>
-<td><code class="prettyprint">531968414930a7f09b075800</code></td>
-</tr>
-<tr>
 <td>methodId</td>
 <td>&mdash;</td>
 <td>Limit to payment method.</td>
@@ -8155,8 +8057,6 @@ Not included fields are <code class="prettyprint">creditApplied</code>, <code cl
 <td><code class="prettyprint">531968414930a7f09b075800</code></td>
 </tr>
 </tbody></table>
-
-<p><strong>At least one of these is required:</strong> <code class="prettyprint">accountId</code>, <code class="prettyprint">methodId</code> or <code class="prettyprint">invoiceId</code>.</p>
 
 <h3 id="response">Response</h3>
 

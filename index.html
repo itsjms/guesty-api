@@ -118,94 +118,13 @@
       <div class="content">
         <h1 id="introduction">Introduction</h1>
 
-<p>Platform api is a backend for <a href="https://app.guesty.com">Guesty Dashboard</a> project, as well as supporting all the bots and platforms communication.</p>
+<p>Guesty platform API.</p>
 
 <h1 id="authentication">Authentication</h1>
 
-<p>Authentication is made with tokens (JWT).</p>
+<p>To use the Guesty API, you’ll need a private API key that is linked to your account. You can generate one <a href="https://app.guesty.com/account/system/general">here</a></p>
 
-<p>All requests require HTTPS. 400 Otherwise.</p>
-
-<h2 id="authenticate">Authenticate</h2>
-<pre class="highlight json"><code><span class="p">{</span><span class="w">
-    </span><span class="nt">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{Here comes a token}}"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-
-<h3 id="http-request">HTTP Request</h3>
-
-<p><code class="prettyprint">POST /authenticate</code></p>
-
-<h3 id="query-parameters">Query Parameters</h3>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>apiKey</td>
-<td><strong>Required</strong></td>
-<td>The key for the application you are using.</td>
-</tr>
-<tr>
-<td>secret</td>
-<td><strong>Required</strong> (for api access)</td>
-<td>Provided with the apiKey</td>
-</tr>
-<tr>
-<td>username</td>
-<td><strong>Required</strong> (for users)</td>
-<td>User credentials</td>
-</tr>
-<tr>
-<td>password</td>
-<td><strong>Required</strong> (for users)</td>
-<td>User credentials</td>
-</tr>
-</tbody></table>
-
-<h3 id="response">Response</h3>
-
-<p>Token</p>
-
-<h3 id="errors">Errors</h3>
-
-<table><thead>
-<tr>
-<th>Errors</th>
-<th>Code</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>Missing apiKey, username, password</td>
-<td>400</td>
-</tr>
-<tr>
-<td>Wrong apiKey</td>
-<td>401</td>
-</tr>
-<tr>
-<td>Wrong credentials</td>
-<td>401</td>
-</tr>
-</tbody></table>
-
-<h2 id="revoke-a-token">Revoke a token</h2>
-
-<h3 id="http-request">HTTP Request</h3>
-
-<p><code class="prettyprint">POST /authenticate/revoke</code></p>
-
-<h3 id="authorization">Authorization</h3>
-
-<p>Accessible with any valid token</p>
-
-<h3 id="response">Response</h3>
-
-<p><code class="prettyprint">OK</code></p>
+<p>Be sure to keep this API key private. All API requests must be made over HTTPS and are authenticated via HTTP Basic Auth. Use your API key as the username and secret as the password.</p>
 
 <h1 id="search">Search</h1>
 

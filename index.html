@@ -1679,8 +1679,6 @@ password | String -->
 
 <p><code class="prettyprint">POST /integrations</code></p>
 
-<p>Available fields: <code class="prettyprint">platform</code>, <code class="prettyprint">airbnb.username</code>, <code class="prettyprint">airbnb.password</code>, <code class="prettyprint">rentalsUnited.username</code>, <code class="prettyprint">rentalsUnited.password</code>. Others ignored.</p>
-
 <h3 id="response">Response</h3>
 
 <p>The created integration object.</p>
@@ -1690,10 +1688,6 @@ password | String -->
 <h3 id="http-request">HTTP Request</h3>
 
 <p><code class="prettyprint">PUT /integrations/:id</code></p>
-
-<p>Available fields: <code class="prettyprint">nickname</code>, <code class="prettyprint">airbnb.incomingEmail</code>, <code class="prettyprint">airbnb.username</code>, <code class="prettyprint">airbnb.password</code>, <code class="prettyprint">airbnb.forwardEmails.*</code>. Others ignored.</p>
-
-<!-- and request is of included integrations. -->
 
 <h3 id="response">Response</h3>
 
@@ -3244,8 +3238,6 @@ password | String -->
 
 <p>Listing object</p>
 
-<aside class="notice">Forbidden fields are omitted according to the user&rsquo;s permissions</aside>
-
 <h2 id="update-a-listing">Update a listing</h2>
 
 <h3 id="http-request">HTTP Request</h3>
@@ -3490,10 +3482,6 @@ password | String -->
 <h3 id="http-request">HTTP Request</h3>
 
 <p><code class="prettyprint">PUT /listings/calendars</code></p>
-
-<p>Prices update needs &#39;listing.calendar.full&rsquo; permission</p>
-
-<p>Available fields are mapped by user&rsquo;s permissions.</p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -4841,8 +4829,6 @@ timeToCloseInDays           |                   | -->
 
 <p><code class="prettyprint">POST /reservations</code></p>
 
-<p>Available fields are mapped by user&rsquo;s permissions.</p>
-
 <h3 id="body">Body</h3>
 
 <p>There are no required fields.</p>
@@ -4890,15 +4876,11 @@ System will make sure calendar is available, and decline otherwise (401), unless
 
 <p>Reservation object</p>
 
-<aside class="notice">Forbidden fields are omitted according to the user&rsquo;s permissions</aside>
-
 <h2 id="update-a-reservation">Update a reservation</h2>
 
 <h3 id="http-request">HTTP Request</h3>
 
 <p><code class="prettyprint">PUT /reservations/:id</code></p>
-
-<p>Available fields are mapped by user&rsquo;s permissions.</p>
 
 <p>Validations:
 System will make sure reservation is according to terms (min, max nights, any other terms), and decline otherwise (401), unless flag (ignoreTerms).

@@ -3483,7 +3483,11 @@ password | String -->
 
 <p><code class="prettyprint">PUT /listings/calendars</code></p>
 
-<h3 id="query-parameters">Query Parameters</h3>
+<h3 id="body-parameters">Body Parameters</h3>
+
+<p>There are 2 options (second one is preferable)</p>
+
+<p>Option 1 - <strong>single period</strong> (will be deprecated in the next major release)</p>
 
 <table><thead>
 <tr>
@@ -3497,7 +3501,57 @@ password | String -->
 <td>listings</td>
 <td><strong>Required</strong></td>
 <td>Array of ids of listings to update, or a single id.</td>
-<td>&ldquo;</td>
+<td><code class="prettyprint">531968414930a7f09b075800</code></td>
+</tr>
+<tr>
+<td>from</td>
+<td><strong>Required</strong></td>
+<td>Update dates starting from this date. Format: <code class="prettyprint">yyyy-mm-dd</code>.</td>
+<td><code class="prettyprint">&quot;2016-01-10&quot;</code></td>
+</tr>
+<tr>
+<td>to</td>
+<td><strong>Required</strong></td>
+<td>Update dates ending at this date. Format: <code class="prettyprint">yyyy-mm-dd</code>.</td>
+<td><code class="prettyprint">&quot;2016-01-11&quot;</code></td>
+</tr>
+<tr>
+<td>status</td>
+<td>&mdash;</td>
+<td>New status, enum: <code class="prettyprint">available</code>, <code class="prettyprint">unavailable</code>.</td>
+<td><code class="prettyprint">available</code></td>
+</tr>
+<tr>
+<td>price</td>
+<td>&mdash;</td>
+<td>New price, in the listing&rsquo;s currency.</td>
+<td><code class="prettyprint">100</code></td>
+</tr>
+<tr>
+<td>note</td>
+<td>&mdash;</td>
+<td>Note to add to those dates.</td>
+<td></td>
+</tr>
+</tbody></table>
+
+<p>Option 2 - <strong>multiple periods</strong></p>
+
+<p>The body should be an <strong>Array</strong> of</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>listingId</td>
+<td><strong>Required</strong></td>
+<td>listing ID.</td>
+<td><code class="prettyprint">531968414930a7f09b075800</code></td>
 </tr>
 <tr>
 <td>from</td>
@@ -3720,7 +3774,7 @@ password | String -->
 <td>fields</td>
 <td><code class="prettyprint">null</code></td>
 <td>Selection of fields, separated by space</td>
-<td>&rdquo;</td>
+<td>&ldquo;</td>
 </tr>
 </tbody></table>
 
@@ -4076,7 +4130,7 @@ contactId | String (ObjectId) | Contact when <code class="prettyprint">target</c
 <td>fields</td>
 <td><code class="prettyprint">null</code></td>
 <td>Selection of fields, separated by space</td>
-<td>&ldquo;</td>
+<td>&rdquo;</td>
 </tr>
 </tbody></table>
 
@@ -5033,7 +5087,7 @@ System will make sure calendar is available, and decline otherwise (401), unless
 <tr>
 <td>stripePaymentMethodToken</td>
 <td></td>
-<td><strong>Required</strong> if method is &quot;stripe&rdquo;</td>
+<td><strong>Required</strong> if method is &ldquo;stripe&rdquo;</td>
 </tr>
 </tbody></table>
 

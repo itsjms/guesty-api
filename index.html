@@ -8105,6 +8105,107 @@ Not included fields are <code class="prettyprint">creditApplied</code>, <code cl
 
 <p>No limit on rows count.</p>
 
+<h1 id="webhooks">WebHooks</h1>
+
+<h2 id="list-all-account-webhooks">List all account WebHooks</h2>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET /webhooks</code></p>
+
+<h3 id="response">Response</h3>
+
+<p>An Array of WebHooks</p>
+<pre class="highlight json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"595a7fc636f2491000b6b81a"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"55b9f9b5393dfe0e004b6c5d"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.hookurl.com"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"__v"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"events"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="s2">"guest.updated"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"listing.new"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"listing.removed"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"payments.failed"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"reservation.new"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"reservation.updated"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"reservation.reviewed"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"task.created"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"task.updated"</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+
+<h2 id="create-a-webhooks">Create a WebHooks</h2>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST /webhooks</code></p>
+
+<h3 id="body">Body</h3>
+
+<ul>
+<li>url - a url you want to register the WebHook to.</li>
+<li>events - an Array of events you want to register to, can be one of the following:<br>
+
+<ul>
+<li>guest.created</li>
+<li>guest.deleted</li>
+<li>guest.updated</li>
+<li>listing.new</li>
+<li>listing.updated</li>
+<li>listing.removed</li>
+<li>payments.failed</li>
+<li>reservation.messageReceived</li>
+<li>reservation.new</li>
+<li>reservation.updated</li>
+<li>reservation.messageSent</li>
+<li>reservation.reviewed</li>
+<li>task.created</li>
+<li>task.deleted</li>
+<li>task.update</li>
+</ul></li>
+</ul>
+
+<h3 id="response">Response</h3>
+
+<p>Status code of <code class="prettyprint">201</code> created.<br>
+Created WebHook Object, see <a href="#List all account WebHooks">List all account WebHooks</a></p>
+
+<h2 id="retrieve-a-webhooks">Retrieve a WebHooks</h2>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET /webhooks/:id</code></p>
+
+<h3 id="response">Response</h3>
+
+<p>An WebHook Object, see <a href="#List all account WebHooks">List all account WebHooks</a></p>
+
+<h2 id="update-a-webhooks">Update a WebHooks</h2>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">PUT /webhooks/:id</code></p>
+
+<ul>
+<li>id - is the WebHook _id you got when create a WebHook, see <a href="#Create a WebHooks">Create a WebHooks</a></li>
+</ul>
+
+<h3 id="body">Body</h3>
+
+<ul>
+<li>url</li>
+<li>events</li>
+</ul>
+
+<p>see <a href="#Create a WebHooks">Create a WebHooks</a></p>
+
+<h3 id="response">Response</h3>
+
+<p>Status code <code class="prettyprint">204</code> if success</p>
+
           <h1 id="errors">Errors</h1>
 
 <p>Platform API uses the following error codes:</p>
